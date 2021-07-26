@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+
+        BadgeDrawable badge = bottomNavigationView.getOrCreateBadge(R.id.miMessages);
+        badge.setNumber(11);
+        badge.setBackgroundColor(getColor(R.color.design_default_color_primary));
+        badge.setVisible(true);
 
     }
 
